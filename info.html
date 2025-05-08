@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="quiltingp.css" />
+    <title>Quilting p</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(77, 28, 189);
+      }
+
+      .img {
+        align-items: center;
+      }
+
+      .intro-text {
+        width: 900px;
+        padding: 20px;
+        border-radius: 50px;
+        box-shadow: 8px 8px 16px 0px rgba(45, 17, 233, 0.2);
+        background-color: #f9f9f9;
+        border: 2px solid black;
+        font-family: "Courier New", Courier, monospace;
+        text-align: left;
+        color: blue;
+      }
+
+      .intro-text h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: blue;
+      }
+
+      .intro-text p {
+        font-size: 16px;
+        color: blue;
+        margin-bottom: 10px;
+      }
+
+      .side-arrow {
+        position: fixed;
+        font-size: 100px;
+        color: white;
+        z-index: 1000;
+        pointer-events: auto;
+      }
+      .left-arrow {
+        right: auto;
+        left: 20px;
+      }
+
+      .side-arrow.left-arrow {
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .side-arrow.right-arrow {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="intro-text">
+      <h1>Quilting p</h1>
+      <p>
+        <i
+          >A quilt is a record of time through scrapped fabrics and cloths. When
+          they come together they make a visual archive of what has been worn
+          and thrown out. Without the present to look back at it, it is not as
+          meaningful. There should be an anchor in time to make a look-back
+          insightful.</i
+        >
+      </p>
+
+      <p>
+        The webquilt operates as a webring, you can view each section by
+        clicking on the arrows and they will take you through these pages:
+      </p>
+      <p><img src="webquilt.png" height="180px" /></p>
+
+      <p>
+        When interacting with the <b>TrashBIN</b>, you might notice that some
+        websites appear broken due to CORS. Cross-Origin Resource Sharing helps
+        to view “web applications that are loaded in one domain to interact with
+        resources in a different domain”. The link might be broken or not
+        displayed correctly for security reasons.
+      </p>
+
+      <p>
+        The <b>glossary</b> contains translations of digital CSS elements to
+        quilting definitions. These definitions also apply from the physical
+        materials to the digital, often translated from an action, a visual and
+        contextual perspective.
+      </p>
+
+      <p>
+        The screenshots displayed in the <b>colophon</b> are a collection of
+        digital scraps from the class. They have been embedded in a way where it
+        resembles a physical quilt, playing around with different threads by
+        using dashed lines, dots and juxtapositions.
+      </p>
+
+      <p>
+        The physical quilt exhibits translations of websites made during our
+        quilting workshop. We gathered together and asked our classmates to
+        think of a website that they wanted to recreate with fabric scraps. You
+        can view these digitally on the <b>Quilt top (scans)</b> section, you
+        can view the original website by clicking onto the quilt top.
+      </p>
+
+      <p>This project is by Sevgi Tan and Martina Farrugia (XPUB1).</p>
+    </div>
+    <a href="glossary.html">
+      <span class="side-arrow">&#8680;</span>
+    </a>
+    <a href="quiltingp.html">
+      <span class="side-arrow left-arrow">&#8678;</span>
+    </a>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="quiltingp.css" />
+    <title>Glossary</title>
+  </head>
+
+  <style>
+    .direction{
+      text-align: center !important;
+      font-weight: bold;
+
+        }
+    .styled-table {
+      width: 80%;
+      margin: 3em auto;
+      border-collapse: collapse;
+      font-family: "Courier New", Courier, monospace;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px 0px rgba(45, 17, 233, 0.2);
+      border-radius: 10px;
+      border: 2px solid black;
+      /* width: 900px; */
+    }
+    .styled-table th,
+    .styled-table td {
+      padding: 12px;
+      border: 1px solid black;
+      text-align: left;
+      color: blue;
+      font-size:1vw;
+      /* width: 4vw; */
+    }
+    .styled-table th {
+      background-color: #ddd;
+      font-weight: bold;
+      width: 1000px;
+    }
+    .left-arrow {
+      right: auto;
+      left: 20px;
+    }
+    .textile, .web{
+      vertical-align: text-top;
+    }
+  </style>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>digital</th>
+        <th>transformation direction</th>
+        <th>textile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="web" style="border-style: inset !important;">
+          border-style: inset;
+        </td>
+        <td class="direction"><---visual---></td>
+        <td class="textile">
+          Mitered borders
+        </td>
+      </tr>
+      <tr>
+        <td class="web" style="border:3px dashed red;">
+          border
+          <br />
+          This property allows for a border to be drawn around the element. The
+          border can be offset or flushed together with the element. It can be
+          dashed, dotted, solid, ridge, inset, double, groove or outset.
+        </td>
+        <td class="direction">---visual---></td>
+        <td class="textile">
+          Stitch-in-the-ditch
+          <br />
+          When the stitching of the piece of fabric follows the seam line
+          precisely.
+        </td>
+      </tr>
+      <tr>
+        <td class="web">
+          inherit
+          <br />
+          inherit is a value that can be used for a lot of CSS
+          properties that indicate the property of this element’s value is the
+          same value as the parent element. This is also the default selection
+          if the property is not declared separately.
+        </td>
+        <td class="direction">--contextual--></td>
+        <td class="textile">
+          Echo quilting
+          <br />
+          Echo quilting is following the edge of the previous
+          piece of textile and echoing its shape further.
+        </td>
+      </tr>
+      <tr>
+        <td class="web">
+          Pseudo-Classes
+          <br />
+          Pseudo-classes are used to declare the state of an
+          element and can be used to style how an element acts upon interaction,
+          before/after being interacted with, select certain children of the
+          element itself, etc. We thought this translation is the closest to
+          create a touch based interaction between the user and the website as
+          'hand' may offer.
+        </td>
+        <td class="direction"><---action---</td>
+        <td class="textile">hand 
+          <br />
+          is the term used for describing the feel of a fabric.</td>
+      </tr>
+      <tr>
+        <td class="web" style="outline:10px solid red;">
+          Padding 
+          <br />
+          Padding is referred to the outside area of an element between the element and its parent.
+          if the element is a paragraph (p) the text and the borders of the element the paragraph is in have a padding
+          in between each other.
+        </td>
+        <td class="direction"><---visual---</td>
+        <td class="textile">Sashing
+          <br />
+          is the term used for strips that go around the blocks of a quilt.</td>
+      </tr>
+      <tr>
+        <td class="web">
+          Position: Absolute
+          <br />
+          is the property value that seems to visually equal an applique since the element with 
+          this property will stay in place unlike position:sticky which would have disrupted the entire flow. <br>
+        </td>
+        <td class="direction"><---visual---</td>
+        <td class="textile">Applique
+          <br />
+          this is the name of the craft that kind of works like embroidery. Using fabrics instead of
+          fabric, it is the craft of creating a design with scraps sewn one on top of another.
+        </td>
+      </tr>
+      <tr>
+        <td class="web">
+          Overflow: None;
+          <br />
+          with this property, we can eliminate all possibilities of scrolling and seeing the rest of the element.
+          However, it is still there, hiding away.
+        </td>
+        <td class="direction">---action---></td>
+        <td class="textile">
+          Finished size
+          <br />
+          This is the size of the piece of fabric with the seam allowance and we can still see this inch on the otherside of the quilt
+        </td>
+      </tr>
+      <tr>
+        <td class="web">
+          <marquee style="background-color:red;color:white;font-weight: bold;">Marquee</marquee>
+          <br />
+          Marquee element is a (deprecated - no longer recommended) continuous text element. The effect of a marquee could be recreated with CSS animations as well. The length of the marquee is the length of the element.
+        </td>
+        <td class="direction">---action---></td>
+        <td class="textile">
+          Jelly Roll
+          <br />
+          Jelly Roll is a 2.5 inch (6 cm) thick fabric strip that allows for easier quilt making. The name comes from an American brand.
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <a href="screenshotquilt.html">
+    <span class="side-arrow">&#8680;</span>
+  </a>
+  <a href="info.html">
+    <span class="side-arrow left-arrow">&#8678;</span>
+  </a>
+</html>
