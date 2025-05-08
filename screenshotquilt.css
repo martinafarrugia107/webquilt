@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(77, 28, 189);
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container iframe {
+  position: absolute;
+  width: 20vw;
+  height: 36vh;
+  background-color: aqua;
+  border-radius: 10px;
+  mix-blend-mode: exclusion;
+  opacity: 1;
+  /* pointer-events: none;  */
+  /* this prevents the iframes from blocking the clicks from the arrows */
+  /* z-index: 1; */
+}
+
+.container iframe:nth-child(1) {
+  top: 0%;
+  left: 0%;
+  width: 20vw;
+  height: 36vh;
+  border-radius: 10px rgb(191, 8, 11);
+}
+
+.container iframe:nth-child(2) {
+  top: 0%;
+  left: 20.5%;
+  width: 20vw;
+  height: 76vh;
+  border: 10px dashed rgb(154, 127, 185);
+}
+
+.container iframe:nth-child(3) {
+  top: 20%;
+  left: 50%;
+  width: 48vw;
+  height: 61vh;
+  border: 10px dotted rgb(13, 39, 7);
+}
+
+.container iframe:nth-child(4) {
+  top: 41%;
+  left: 18%;
+  width: 54vw;
+  height: 16vh;
+  border: 10px dashed rgb(205, 9, 9);
+  transform: rotate(90deg);
+}
+
+.container iframe:nth-child(5) {
+  top: 82%;
+  left: 50%;
+  width: 49vw;
+  height: 15vh;
+  border: 5px rgb(77, 3, 3);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(6) {
+  top: 75%;
+  left: 45%;
+  width: 10vw;
+  height: 18vh;
+  border: 5px rgb(28, 223, 70);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(7) {
+  top: 0%;
+  left: 50%;
+  width: 49vw;
+  height: 19vh;
+  border: 5px rgb(200, 243, 83);
+  border-style: ridge;
+}
+
+.container iframe:nth-child(8) {
+  top: 10%;
+  left: 45%;
+  width: 10vw;
+  height: 18vh;
+  border: 5px rgb(205, 9, 9);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(9) {
+  top: 23%;
+  left: 20.5%;
+  width: 20vw;
+  height: 76vh;
+  border: 10px dashed rgb(50, 8, 216);
+}
+
+.container iframe:nth-child(10) {
+  top: 37%;
+  left: 0%;
+  width: 20vw;
+  height: 61vh;
+  border: 10px dashed rgb(54, 7, 107);
+}
+
+.container iframe:nth-child(11) {
+  top: 24%;
+  left: 18%;
+  width: 10vw;
+  height: 18vh;
+  border: 5px rgb(218, 68, 68);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(12) {
+  top: 99%;
+  left: 18%;
+  width: 30vw;
+  height: 30vh;
+  border: 5px rgb(218, 68, 68);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(13) {
+  top: 98%;
+  left: 48%;
+  width: 51vw;
+  height: 19vh;
+  border: 5px rgb(218, 68, 68);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(14) {
+  top: 118%;
+  left: 50%;
+  width: 49vw;
+  height: 35vh;
+  border: 10px rgb(77, 3, 3);
+  border-style: dashed solid;
+}
+
+.container iframe:nth-child(15) {
+  top: 118%;
+  left: 10%;
+  width: 48vw;
+  height: 61vh;
+  border: 10px dotted rgb(13, 39, 7);
+}
+
+.container iframe:nth-child(16) {
+  top: 99%;
+  left: 0%;
+  width: 18vw;
+  height: 80vh;
+  border-radius: 10px rgb(191, 8, 11);
+}
+
+.container iframe:nth-child(18) {
+  top: 152%;
+  left: 50%;
+  width: 49vw;
+  height: 40vh;
+  border: 10px dashed rgb(50, 8, 216);
+}
+
+.container iframe:nth-child(19) {
+  top: 145%;
+  left: 18%;
+  width: 15vw;
+  height: 90vh;
+  border: 10px dashed rgb(205, 9, 9);
+  transform: rotate(90deg);
+}
+
+.side-arrow {
+  position: fixed;
+  font-size: 100px;
+  color: white;
+  z-index: 999; /* this puts the arrows on top of all elements */
+  pointer-events: auto;
+  transform: translateY(-50%);
+}
+
+/* left arrow */
+.side-arrow.left-arrow {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* right arrow */
+.side-arrow.right-arrow {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}

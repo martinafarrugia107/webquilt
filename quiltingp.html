@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="quiltingp.css" />
+  <title>trashBIN</title>
+
+  <style>
+    body {
+      background-color: rgb(77, 28, 189);
+      height: 100px;
+      position: relative;
+      text-align: left;
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 20px;
+    }
+
+    .side-arrow {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 100px;
+      color: white;
+      z-index: 1000;
+    }
+
+    .left-arrow {
+      right: auto;
+      left: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .container iframe {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+      border-radius: 40px;
+      mix-blend-mode: exclusion;
+      opacity: 10;
+    }
+
+    .container iframe:nth-child(1) {
+      top: 0%;
+      left: 0%;
+      width: 300px;
+      height: 300px;
+      border-radius: 30px rgb(191, 8, 11);
+    }
+
+    iframe .title-text {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .button {
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    button {
+      width: 300px;
+      font-size: large;
+      margin: 2px;
+      padding: 1px;
+      border: 1px solid #2507c0;
+      box-shadow: 5px 5px 0px rgb(232, 16, 189);
+      background-color: #fff;
+      text-transform: lowercase;
+      font-family: "Courier New", Courier, monospace;
+      color: #2507c0;
+    }
+
+    .container iframe.allframes:nth-child(5) {
+      top: 82%;
+      left: 50%;
+      width: 710px;
+      height: 125px;
+      border: 5px rgb(77, 3, 3);
+      border-style: dashed solid;
+    }
+
+    #urlbar{
+      width:40vw;
+    }
+
+    .allframes {
+
+      margin: -20px;
+      border: dashed 5px lime;
+      mix-blend-mode: exclusion;
+      border-radius: 10px;
+    }
+
+    .allframes:nth-of-type(2n) {
+      background-color: rgb(198, 22, 51);
+    }
+
+    a:link {
+      color: rgb(255, 255, 255);
+    }
+
+    #framesdiv {
+      display: flex;
+      gap: 1.6vw;
+      flex-wrap: wrap-reverse;
+      padding-left: 20px;
+      flex-direction: row-reverse;
+      justify-content:space-between;
+      margin:1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="stored"></div>
+  <a href="info.html">
+    <span class="side-arrow right-arrow">&#8680;</span>
+  </a>
+  <a href="scans.html">
+    <span class="side-arrow left-arrow">&#8678;</span>
+  </a>
+
+
+  </div>
+
+  <div id="urlbarbox">
+    <input type="url" id="urlbar" placeholder="https://something.somewhere.nl"/>
+    <button onclick="submit()">add your url</button>
+    <!-- p is here to see if the url is working, uncomment this and let log to test -->
+    <p id="values"></p>
+    <span id="link"></span>
+    <div id="framesdiv"></div>
+  </div>
+
+  <script>
+
+
+    // get ur elements!
+    let input = document.getElementById("urlbar");
+    // values is here to see if the url is working, uncomment this and #values to test, but when i take it out the whole thing stops?
+    let log = document.getElementById("values");
+    // first i added an eventlistener to get the value but that turned out to get every single letter and making it into a url...
+    // so now it a button
+
+    async function gethtml(url) {
+      try {
+        let data1 = { url: url };
+        let response = await fetch(
+          "https://hub.xpub.nl/cerealbox/SI26/webquilting/getcorserror.php",
+          { method: "post", body: JSON.stringify(data1) }
+        );
+        console.log(response);
+        let data = await response.text();
+        console.log(data);
+        console.log(response.status);
+      } catch (error) {
+        console.log("error!!!!!!!!", error.message);
+      }
+    }
+
+    function randomIntFromInterval(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function submit() {
+      let newiframe = document.createElement("iframe");
+      let url = input.value;
+      log.textContent = url;
+      newiframe.setAttribute("src", url);
+      newiframe.setAttribute("onload", chkFrame(this));
+      saveUrl(url);
+      newiframe.classList.add("allframes");
+      const rndInt = randomIntFromInterval(10, 20);
+      newiframe.style.width = JSON.stringify(rndInt) + "vw";
+      newiframe.style.height = JSON.stringify(rndInt) + "vh";
+      document.getElementById("framesdiv").appendChild(newiframe);
+      gethtml(url);
+    }
+
+    function submitstart(url) {
+      let newiframe = document.createElement("iframe");
+      log.textContent = url;
+      newiframe.setAttribute("src", url);
+      newiframe.setAttribute("onload", chkFrame(this));
+      newiframe.classList.add("allframes");
+      const rndInt = randomIntFromInterval(10, 20);
+      newiframe.style.width = JSON.stringify(rndInt) + "vw";
+      newiframe.style.height = JSON.stringify(rndInt) + "vh";
+      document.getElementById("framesdiv").appendChild(newiframe);
+      gethtml(url);
+    }
+
+    async function gethtml(url) {
+      try {
+        let data1 = { url: url };
+        let response = await fetch(
+          "https://hub.xpub.nl/cerealbox/SI26/webquilting/getcorserror.php",
+          { method: "post", body: JSON.stringify(data1) }
+        );
+        console.log(response);
+        let data = await response.text();
+        console.log(data);
+        console.log(response.status);
+      } catch (error) {
+        console.log("error!!!!!!!!", error.message);
+      }
+    }
+
+    // window.onload = (event) => {
+    // };
+
+    function chkFrame(fr) {
+
+      console.log(fr);
+      // localStorage.setItem("allwindows", JSON.stringify(fr));
+      // localStorage.getItem("allwindows");
+      // document.getElementById("stored").innerHTML = localStorage.getItem("stuff");
+    }
+
+    function saveUrl(url){
+      if(localStorage.getItem("allurls") === null){   // check if allurls in localstorage does not exits 
+        localStorage.setItem("allurls", "[]")        // make an empty json thingy
+      }
+      var allurls = JSON.parse(localStorage.allurls);       //get all urls and save in var allurls
+      allurls.push(url);                                    //add(push) the new url to allurls
+      console.log(allurls);                                 //console log it
+      localStorage.allurls = JSON.stringify(allurls);      //overwrite allurls with the new allurls
+    }
+
+    // ask manetta: how to make it so that broken links show up as: LINK DONT WORK TRY AGAIN:
+    // what if we left it there, and what is cors and how it influences webquilting
+    //
+    // can i make it so that the https:/ is already added [resolved]
+    // could i save all the entries in localstorage and then its a big massive quilt over time
+
+    function init(){
+      var allurls = JSON.parse(localStorage.allurls);       //get all urls and save in var allurls
+      console.log(allurls);
+      for (var url of allurls){
+        console.log(url);
+        submitstart(url);
+      }
+    }
+    init();
+
+  </script>
+</body>
+
+</html>

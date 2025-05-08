@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+.left-arrow {
+  left: 20px;
+  right: auto;
+}
+
+body {
+  background-color: rgb(77, 28, 189);
+  height: 100px;
+  position: relative;
+  text-align: left;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container iframe {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+  border-radius: 40px;
+  mix-blend-mode: exclusion;
+  opacity: 10;
+}
+
+.container iframe:nth-child(1) {
+  top: 0%;
+  left: 0%;
+  width: 300px;
+  height: 300px;
+  border-radius: 30px rgb(191, 8, 11);
+}
+
+iframe .title-text {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.button {
+  font-family: "Courier New", Courier, monospace;
+}
+
+button {
+  width: 300px;
+  font-size: large;
+  margin: 2px;
+  padding: 1px;
+  border: 1px solid #2507c0;
+  box-shadow: 5px 5px 0px rgb(232, 16, 189);
+  background-color: #fff;
+  text-transform: lowercase;
+  font-family: "Courier New", Courier, monospace;
+  color: #2507c0;
+}
+
+.container iframe.allframes:nth-child(5) {
+  top: 82%;
+  left: 50%;
+  width: 710px;
+  height: 125px;
+  border: 5px rgb(77, 3, 3);
+  border-style: dashed solid;
+}
+.side-arrow {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  color: white;
+  z-index: 1000;
+}
